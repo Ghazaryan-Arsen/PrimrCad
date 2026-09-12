@@ -33,49 +33,42 @@ export const WhyPrimecad: React.FC<WhyPrimecadProps> = ({ onOpenRegistration }) 
     }
   ];
 
-  const steps = [
-    { step: '01', title: 'Գրանցվում եք կայքում', desc: 'Լրացրեք կարճ հայտը 10 վայրկյանում' },
-    { step: '02', title: 'PrimeCAD-ը կապվում է ձեզ հետ', desc: 'Ճշտում ենք ձեր ժամանակացույցն ու նախընտրած ֆորմատը' },
-    { step: '03', title: 'Սկսում եք live դասընթացը', desc: 'Online կամ Offline (Քաջազնունի 1) փոքր խմբում' },
-    { step: '04', title: 'Զարգացնում եք skills & portfolio', desc: '3 ամսում ստեղծում եք production-ready CAD աշխատանքներ' }
-  ];
-
   return (
-    <section id="course-details" className="py-20 lg:py-28 bg-prime-dark relative">
+    <section id="course-details" className="py-12 sm:py-20 bg-prime-warm-white text-prime-dark relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-prime-navy border border-prime-gold/30 text-prime-gold text-xs font-semibold uppercase tracking-wider mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-prime-navy/10 border border-prime-navy/20 text-prime-navy text-xs font-bold uppercase tracking-wider mb-3">
             Առավելություններ
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-            Ինչու՞ ընտրել <span className="text-prime-gold">PrimeCAD</span>-ը
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-prime-dark tracking-tight mb-3">
+            Ինչու՞ ընտրել <span className="text-amber-600">PrimeCAD</span>-ը
           </h2>
-          <p className="text-base sm:text-lg text-prime-muted">
+          <p className="text-xs sm:text-base text-gray-600">
             Ինչ օգուտ է ստանում ուսանողը PrimeCAD-ի հատուկ մշակված ուսուցման մոտեցումից։
           </p>
         </div>
 
         {/* Differentiators Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {differentiators.map((diff, i) => {
             const IconComponent = diff.icon;
             return (
               <div
                 key={i}
-                className="bg-prime-card border border-prime-border rounded-2xl p-8 hover:border-prime-gold/40 transition-colors shadow-lg"
+                className="bg-white border border-gray-200/80 rounded-2xl p-6 sm:p-8 hover:border-prime-navy/30 transition-colors shadow-sm"
               >
-                <div className="w-12 h-12 rounded-xl bg-prime-navy border border-prime-gold/30 text-prime-gold flex items-center justify-center mb-6 shadow-gold-glow">
-                  <IconComponent className="w-6 h-6" />
+                <div className="w-11 h-11 rounded-xl bg-prime-navy text-prime-gold flex items-center justify-center mb-5 shadow-sm">
+                  <IconComponent className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-prime-dark mb-2">
                   {diff.title}
                 </h3>
-                <p className="text-sm font-semibold text-prime-gold mb-2 leading-relaxed">
+                <p className="text-xs sm:text-sm font-bold text-amber-700 mb-2 leading-relaxed">
                   {diff.benefit}
                 </p>
-                <p className="text-xs text-prime-muted leading-relaxed">
+                <p className="text-xs text-gray-600 leading-relaxed">
                   {diff.details}
                 </p>
               </div>
@@ -83,46 +76,14 @@ export const WhyPrimecad: React.FC<WhyPrimecadProps> = ({ onOpenRegistration }) 
           })}
         </div>
 
-        {/* How It Works Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-3">
-            Ինչպես է ընթանում ուսուցման գործընթացը (4-Step Flow)
-          </h3>
-          <p className="text-sm text-prime-muted">
-            Պարզ և թափանցիկ ճանապարհ դեպի նոր մասնագիտություն
-          </p>
-        </div>
-
-        {/* 4 Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((s, idx) => (
-            <div
-              key={idx}
-              className="bg-prime-navy/60 border border-prime-border rounded-xl p-6 relative flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-3xl font-black text-prime-gold font-mono block mb-3">
-                  {s.step}
-                </span>
-                <h4 className="text-base font-bold text-white mb-2">
-                  {s.title}
-                </h4>
-                <p className="text-xs text-prime-muted leading-relaxed">
-                  {s.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Quick CTA */}
-        <div className="mt-12 text-center">
+        <div className="text-center">
           <button
             onClick={onOpenRegistration}
-            className="inline-flex items-center gap-2 bg-prime-gold text-prime-dark font-bold text-sm px-6 py-3.5 rounded-xl hover:bg-prime-gold-hover transition-colors shadow-gold-glow"
+            className="inline-flex items-center gap-2 bg-prime-navy text-white hover:bg-prime-navy/90 font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl transition-all shadow-md active:scale-95"
           >
-            <span>Սկսել հիմա — Գրանցվել դասընթացին</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Գրանցվել դասընթացին</span>
+            <ArrowRight className="w-4 h-4 text-prime-gold" />
           </button>
         </div>
 
