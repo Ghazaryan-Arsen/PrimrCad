@@ -19,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegistration }) => {
 
   return (
     <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-gradient-to-b from-prime-dark via-prime-navy/40 to-prime-dark">
-      {/* Subtle Background Glows */}
+      {/* Background Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-prime-gold/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-12 right-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -29,7 +29,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegistration }) => {
           {/* Hero Left Content */}
           <div className="lg:col-span-7 flex flex-col text-left">
 
-            {/* Top Pill / Badge */}
+            {/* Top Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-prime-navy border border-prime-gold/30 w-fit mb-6 shadow-sm">
               <Award className="w-4 h-4 text-prime-gold" />
               <span className="text-xs font-semibold text-prime-gold tracking-wide uppercase">
@@ -105,25 +105,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegistration }) => {
           {/* Hero Right Visual Element */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-
-              {/* Outer Decorative Frame */}
               <div className="absolute -inset-1 bg-gradient-to-r from-prime-gold/30 to-blue-500/20 rounded-2xl blur-lg opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
 
               <div className="relative bg-prime-card border border-prime-border/80 rounded-2xl p-6 shadow-2xl overflow-hidden">
 
-                {/* Simulated Jewelry CAD Viewport Placeholder */}
+                {/* Purely Decorative CAD Viewport */}
                 <div className="relative aspect-square w-full rounded-xl bg-prime-dark/90 border border-prime-border/50 flex flex-col justify-between p-4 overflow-hidden">
 
-                  {/* Viewport Header */}
                   <div className="flex items-center justify-between text-[11px] text-prime-muted border-b border-prime-border/40 pb-2">
                     <span className="flex items-center gap-1.5 font-mono text-prime-gold">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      Rhino / Matrix 9 CAD Viewport
+                      Rhino / Matrix 9 Viewport
                     </span>
                     <span className="font-mono text-xs">PERSPECTIVE</span>
                   </div>
 
-                  {/* High Quality SVG Jewelry Ring Render Graphic */}
                   <div className="my-auto flex flex-col items-center justify-center py-4 relative">
                     <svg className="w-48 h-48 sm:w-56 sm:h-56 drop-shadow-[0_0_15px_rgba(253,225,151,0.25)]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="100" cy="100" r="85" stroke="#212A58" strokeWidth="1" strokeDasharray="4 4" />
@@ -145,19 +141,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegistration }) => {
                     </svg>
 
                     <div className="absolute bottom-1 right-2 text-[10px] font-mono text-prime-muted bg-prime-navy/80 px-2 py-0.5 rounded border border-prime-border">
-                      Wireframe & Mesh Ready
+                      3D Mesh Model
                     </div>
                   </div>
 
-                  {/* Viewport Footer Parameters */}
-                  <div className="grid grid-cols-3 gap-2 pt-2 border-t border-prime-border/40 text-[10px] font-mono text-prime-muted text-center">
-                    <div className="bg-prime-navy/50 p-1 rounded">Volume: 124 mm³</div>
-                    <div className="bg-prime-navy/50 p-1 rounded">Mesh: Clean STL</div>
-                    <div className="bg-prime-navy/50 p-1 rounded">Tolerance: 0.01</div>
+                  <div className="pt-2 border-t border-prime-border/40 text-[10px] font-mono text-prime-muted text-center">
+                    Clean Mesh STL · Production Ready
                   </div>
                 </div>
 
-                {/* Micro trust overlay cards */}
                 <div className="mt-4 grid grid-cols-2 gap-3">
                   <div className="bg-prime-navy/60 p-3 rounded-xl border border-prime-border/60 flex items-center gap-2.5">
                     <Users className="w-5 h-5 text-prime-gold flex-shrink-0" />

@@ -7,7 +7,7 @@ export const CONTACT_INFO: ContactInfo = {
   instagram: 'https://www.instagram.com/primecad.modeling?stkn=dGtkbW1lYWVyZGtq',
   address: 'Քաջազնունի 1',
   pricePerMonth: '150,000 դրամ / ամիս',
-  totalPrice: '3 ամիս · ընդհանուր 450,000 դրամ',
+  totalPrice: '3 ամիս · ընդհանուր՝ 450,000 դրամ',
   duration: '3 ամիս',
   schedule: 'շաբաթական 3 անգամ',
   groupSize: '2–4 հոգի',
@@ -101,33 +101,23 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
 export const STUDENT_OUTCOMES: OutcomeItem[] = [
   {
     id: 'zero-to-prod',
-    title: 'Զրոյից production-ready CAD models',
+    title: 'Production-Ready Jewelry CAD',
     description: 'Կարողանալու եք ինքնուրույն նախագծել և ստեղծել արտադրության համար լիարժեք պատրաստ 3D զարդեր։'
   },
   {
-    id: 'ring-models',
-    title: 'Professional ring models',
-    description: 'Ստեղծել ցանկացած բարդության մատանիներ՝ ճշգրիտ քարերով, pave տեղադրումներով և բարդ կառուցվածքով։'
-  },
-  {
     id: 'stl-prep',
-    title: 'STL preparation manufacturing-ի համար',
+    title: 'STL / Manufacturing Preparation',
     description: 'Պատրաստել անթերի 3D printing STL ֆայլեր՝ առանց տեխնիկական սխալների կամ խոտանների։'
   },
   {
-    id: 'real-workflow',
-    title: 'Իրական production workflow',
-    description: 'Տիրապետել ոսկերչական արտադրության ողջ շղթային՝ գծագրից մինչև պատրաստի ձուլվածք։'
+    id: 'professional-portfolio',
+    title: 'Professional Portfolio',
+    description: 'Ձևավորել աշխատանքների պրոֆեսիոնալ պորտֆոլիո՝ հաճախորդներին և ընկերություններին ներկայանալու համար։'
   },
   {
-    id: 'digital-sales',
-    title: 'Digital 3D models-ի վաճառք',
-    description: 'Ստեղծել digital 3D models և վաճառել դրանք միջազգային 3D marketplace-ներում։'
-  },
-  {
-    id: 'freelance-career',
-    title: 'Freelance & International opportunities',
-    description: 'Աշխատել որպես freelance Jewelry CAD Modeller տեղական և արտասահմանյան ընկերությունների հետ։'
+    id: 'freelance-opportunities',
+    title: 'Freelance & Digital Model Sales',
+    description: 'Աշխատել որպես freelance CAD modeller կամ վաճառել 3D model-ներ միջազգային marketplace-ներում։'
   }
 ];
 
@@ -150,37 +140,12 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-4',
     question: 'Online տարբերակ կա՞։',
-    answer: 'Այո, ուսուցումը հասանելի է ինչպես Online (Live ֆորմատով), այնպես էլ Offline տարբերակով։'
+    answer: 'Այո, ուսուցումը հասանելի է ինչպես Online (Live ֆորմատով), այնպես էլ Offline տարբերակով (Երևան, Քաջազնունի 1)։'
   },
   {
     id: 'faq-5',
-    question: 'Offline դասերը որտե՞ղ են անցկացվում։',
-    answer: 'Offline դասերն անցկացվում են PrimeCAD-ի ստուդիայում՝ Երևան, Քաջազնունի 1 հասցեում։'
-  },
-  {
-    id: 'faq-6',
-    question: 'Ի՞նչ ծրագրեր ենք սովորում։',
-    answer: 'Դասընթացի ընթացքում սովորում եք Rhino, Matrix 9, ZBrush և Magics ծրագրերը, որոնք կազմում են ժամանակակից Jewelry CAD Modeling-ի ամբողջական workflow-ը։'
-  },
-  {
-    id: 'faq-7',
-    question: 'Ի՞նչ certificate եմ ստանում։',
-    answer: 'Դասընթացի ավարտին և ավարտական նախագիծը հաջողությամբ պաշտպանելուց հետո ուսանողը ստանում է PrimeCAD Certificate:'
-  },
-  {
-    id: 'faq-8',
-    question: 'Որքա՞ն արժե դասընթացը։',
-    answer: 'Ամսական վճարը 150,000 դրամ է։ 3 ամսվա ընդհանուր արժեքը կազմում է 450,000 դրամ։'
-  },
-  {
-    id: 'faq-9',
-    question: 'Դասընթացից հետո ինչ կարող եմ անել։',
-    answer: 'Դուք կունենաք պատրաստի պրոֆեսիոնալ portfolio, կկարողանաք աշխատել որպես Jewelry CAD Modeler, կատարել freelance պատվերներ, համագործակցել ոսկերչական արտադրամասերի հետ կամ վաճառել ձեր 3D model-ները marketplace-ներում։'
-  },
-  {
-    id: 'faq-10',
-    question: 'Համակարգչի ինչպիսի՞ պահանջներ են անհրաժեշտ։',
-    answer: 'Անհրաժեշտ է միջին հզորության Windows կամ Mac համակարգիչ։ Գրանցվելուց հետո PrimeCAD-ի մասնագետը կապ կհաստատի ձեզ հետ և կօգնի հասկանալ ձեր համակարգչի համապատասխանությունը կամ անհրաժեշտ configuration-ը։'
+    question: 'Ինչպիսի՞ համակարգիչ է անհրաժեշտ։',
+    answer: 'Անհրաժեշտ է միջին հզորության Windows կամ Mac համակարգիչ։ Գրանցվելուց հետո PrimeCAD-ի մասնագետը կապ կհաստատի ձեզ հետ և կօգնի հասկանալ ձեր համակարգչի համապատասխանությունը։'
   }
 ];
 

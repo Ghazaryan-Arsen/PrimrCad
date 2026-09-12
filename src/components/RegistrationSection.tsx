@@ -37,7 +37,7 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({
     } else {
       const cleanPhone = formData.phone.replace(/\D/g, '');
       if (cleanPhone.length < 8) {
-        newErrors.phone = 'Խնդրում ենք մուտքագրել վավեր հեռախոսահամար (առնվազն 8 նիշ)';
+        newErrors.phone = 'Խնդրում ենք մուտքագրել վավեր հեռախոսահամար';
       }
     }
 
@@ -59,14 +59,20 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({
       return;
     }
 
+    const webhookUrl = import.meta.env.VITE_MAKE_REGISTRATION_WEBHOOK_URL;
+
+    // Strict requirement: Do not use placeholder fallback webhook or show fake success when env variable is missing
+    if (!webhookUrl || !webhookUrl.trim()) {
+      console.error('[Registration Error]: Environment variable VITE_MAKE_REGISTRATION_WEBHOOK_URL is missing or empty.');
+      setSubmitError('Կապի խափանում։ Խնդրում ենք կրկին փորձել կամ զանգահարել 077 76 25 01 համարով։');
+      trackEvent('registration_error');
+      return;
+    }
+
     setIsSubmitting(true);
     trackEvent('registration_submit', {
       experienceLevel: formData.experienceLevel || 'not_specified',
     });
-
-    const webhookUrl =
-      import.meta.env.VITE_MAKE_REGISTRATION_WEBHOOK_URL ||
-      'https://hook.make.com/placeholder-primecad-webhook';
 
     const registrationId = `PRIME-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 
@@ -79,7 +85,7 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({
         name: formData.name.trim(),
         phone: formData.phone.trim(),
         email: formData.email.trim(),
-        experienceLevel: formData.experienceLevel || 'Not specified',
+        experienceLevel: formData.experienceLevel || 'beginner',
       },
     };
 
@@ -98,17 +104,16 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({
 
       clearTimeout(timeoutId);
 
-      // Handle both HTTP ok or placeholder success simulation
-      if (response.ok || webhookUrl.includes('placeholder')) {
+      if (response.ok) {
         setSubmitSuccess(true);
         trackEvent('registration_success', { registrationId });
       } else {
-        throw new Error(`Server responded with status: ${response.status}`);
+        throw new Error(`Webhook error response status: ${response.status}`);
       }
     } catch (err) {
-      console.error('[Registration Submission Error]:', err);
+      console.error('[Registration Submission Webhook Failure]:', err);
       trackEvent('registration_error');
-      // User-friendly error message preserving field state for retry
+      // Keep form input state preserved for retry, show user friendly error
       setSubmitError(
         'Կապի խափանում։ Խնդրում ենք կրկին փորձել կամ զանգահարել 077 76 25 01 համարով։'
       );
@@ -131,7 +136,7 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({
           </h3>
 
           <p className="text-sm sm:text-base text-prime-muted mb-8 leading-relaxed max-w-md mx-auto">
-            PrimeCAD-ի ներկայացուցիչը շուտով կկապվի ձեզ հետ՝ դասընթացի մանրամասները և ժամանակացույցը հաստատելու համար։
+            PrimeCAD-ի ներկայացուցիչը շուտով կկապվի ձեզ հետ։
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -189,7 +194,7 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({
               Սկսեք ձեր ճանապարհը Jewelry CAD Modeling-ում
             </h3>
             <p className="text-xs sm:text-sm text-prime-muted">
-              Լրացրեք տվյալները, և մենք կկապվենք ձեզ հետ 15 րոպեի ընթացքում։
+              Լրացրեք տվյալները, և PrimeCAD-ի ներկայացուցիչը շուտով կկապվի ձեզ հետ։
             </p>
           </div>
 
@@ -342,7 +347,7 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({
   }
 
   return (
-    <section id="registration" className="py-20 lg:py-28 bg-prime-navy/60 border-t border-prime-border relative">
+    <section id="registration" className="py-16 sm:py-24 bg-prime-navy/90 border-t border-prime-border relative">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {formContent}
       </div>
